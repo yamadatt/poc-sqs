@@ -5,7 +5,7 @@ provider "aws" {
 # CloudWatch Logs グループの作成(壊せるようにしたいので、検証用に作る)
 resource "aws_cloudwatch_log_group" "this" {
   name              = "/aws/poc-sqs/log-group"
-  retention_in_days = 14
+  retention_in_days = 1
 }
 
 # SQSキューの作成
@@ -104,7 +104,7 @@ resource "aws_cloudwatch_metric_alarm" "this2" {
   namespace           = "pocCustomNamespace"    # カスタムメトリックのネームスペース
   period              = 60                       # メトリックの集計期間（秒）
   statistic           = "Sum"                     # 使用する統計値（Sum, Averageなど）
-  threshold           = 100                       # しきい値に置き換えてください
+  threshold           = 100                       # しきい値
 
   # アラームが発生したときに通知するSNSトピックのARN
   alarm_actions       = [aws_sns_topic.this.arn]

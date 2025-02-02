@@ -2,7 +2,7 @@
 
 以下が実現できるかを確認するためのもの。
 
-- CloudWatchLogs→SNS→SQS
+- CloudWatchLogs→CloudWatchAlarm→SNS→SQS
   - CloudWatchLogsに```ERROR```があった場合に、SQSに連携する
 - CloudWatchAlarm（カスタムメトリクス）→SNS→SQS
   - CloudWatchAlarmのカスタムメトリックスでアラームがあった場合に、SQSに連携する
