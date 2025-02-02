@@ -108,3 +108,10 @@ aws logs put-log-events \
 マネコンで確認。
 
 ![alt text](image.png)
+
+
+## tool
+
+ログを書き込むツール。
+
+https://github.com/yamadatt/send_error_log
